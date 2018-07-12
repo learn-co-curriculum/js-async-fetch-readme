@@ -10,7 +10,7 @@ that 40 percent of visitors to a website will leave if the site takes more than
 But when it comes to making engaging web sites, we often find ourselves
 needing a lot of data.
 
- and bandwidth to download from a server. But just as
+But just as
 importantly to the end user, loading a lot of data at once can also take a
 noticeable amount time, especially on a slow connection.
 
