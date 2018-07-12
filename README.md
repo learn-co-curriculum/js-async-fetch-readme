@@ -83,7 +83,7 @@ Chrome. Open up DevTools and paste the following:
 fetch('http://api.open-notify.org/astros.json').then(response => response.json()).then(json => document.write(`Holy cow! There are ${json["number"]} humans in space.`));
 ```
 
-![Simple fetch()]()
+![Simple fetch()](https://curriculum-content.s3.amazonaws.com/skills-front-end-web-development/js-async-fetch-readme/simple_fetch_incog_window.png)
 
 You might notice that this chained method call returned a `Promise`. We'll
 cover that later.
