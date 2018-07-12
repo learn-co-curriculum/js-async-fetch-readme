@@ -18,7 +18,8 @@ In AJAX we:
 2. Use JavaScript to add more to the DOM, behind the scenes
 
 In this lesson, we will use the JavaScript `fetch()` function and experience
-the AJAX technique.
+the AJAX technique. There is a ***lot*** of subtlety to `fetch()` and AJAX, but
+let's use it before diving deeper.
 
 ## Objectives
 
@@ -89,8 +90,8 @@ The AJAX technique opens up a lot of uses!
 
 * It allows us to pull in dynamic content. The same "framing" HTML page remains
   on screen for a cooking website. The recipe on display updates without page
-  load.  This approach was pioneered by GMail whose navigational area is swapped
-  for mail content swiftly thanks to AJAX.
+  load.  This approach was pioneered by GMail whose nav area is swapped
+  for mail content swiftly &mdash; thanks to AJAX.
 * It allows us to get data from multiple sources. We could make a website that
   displays the current weather forecast and the current price of bitcoin side
   by side! This approach is used by most sites to render ads. Your content loads
@@ -98,14 +99,15 @@ The AJAX technique opens up a lot of uses!
 
 ## Conclusion
 
-In order to provide maximum data with speed, many pages use the AJAX technique.
-It's certainly not required in all sites. Using it for every site is a step
-backward when simple HTML would suffice. However, as sites have more and more
-material, the AJAX technique is a great tool to have.
+Many pages use AJAX to provide users fast and engaging sites.  It's certainly
+not required in all sites. Using it for every site is a step backward when
+simple HTML would suffice. However, as sites have more and more material, the
+AJAX technique is a great tool to have.
 
-Using `fetch()`, we can easily include requests for data wherever we need to in
+Using `fetch()`, we can include requests for data wherever we need to in
 our code. We can `fetch()` data on the click of a button or the expansion of an
-accordion display.
+accordion display. There are many older methods for fetching data, but
+`fetch()` is the future.
 
 ## Resources
 
