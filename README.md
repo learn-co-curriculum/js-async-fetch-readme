@@ -98,16 +98,14 @@ The AJAX technique opens up a lot of uses!
 
 ## Conclusion
 
-Modern websites now often have just _one_ HTML page, which loads initially. As
-you navigate around one of these sites, instead of jumping from HTML page to
-HTML page, JavaScript is loading the exact content we need and swapping it in
-when its ready. Using `fetch()`, we can easily include requests for data wherever
-we need to in our code. We can `fetch()` data on the click of a button or the
-expansion of a tab, instead of when the page initially loads.
+In order to provide maximum data with speed, many pages use the AJAX technique.
+It's certainly not required in all sites. Using it for every site is a step
+backward when simple HTML would suffice. However, as sites have more and more
+material, the AJAX technique is a great tool to have.
 
-By doing this, we can send _only_ the data that is needed, saving on server
-bandwidth while minimizing loading times for the end user. The `fetch()` method
-opens the world of third party data which we can use in our own projects.
+Using `fetch()`, we can easily include requests for data wherever we need to in
+our code. We can `fetch()` data on the click of a button or the expansion of an
+accordion display.
 
 ## Resources
 
