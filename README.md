@@ -7,17 +7,18 @@ When it comes to making engaging web sites, we often find ourselves needing to
 send a lot of data (text, images, media, etc.). But sending and loading this
 data on page visit *feels* slow, especially on a slow connection.
 
-But web users expect sites to load quickly and to stay updated. Research shows
-that 40 percent of visitors to a website will leave if the site takes more than
-3 seconds to load. Mobile users are even less patient.
+However, web users expect sites to load quickly and to stay updated. Research
+shows that 40 percent of visitors to a website will leave if the site takes
+more than 3 seconds to load. Mobile users are even less patient.
 
-A way to deliver a lot of data in a way that doesn't irritate users is to
-deliver an initial, engaging page using HTML and CSS. As the user is beginning
-to read the site, we use JavaScript to add more to the DOM. This technique is
-known as ***AJAX***.
+We deliver sites that don't bore users by using a technique called ***AJAX***.
+In AJAX we:
 
-In this lesson, we will use the JavaScript `fetch()` function to experience the
-AJAX technique.
+1. Deliver an initial, engaging page using HTML and CSS
+2. Use JavaScript to add more to the DOM, behind the scenes
+
+In this lesson, we will use the JavaScript `fetch()` function and experience
+the AJAX technique.
 
 ## Objectives
 
