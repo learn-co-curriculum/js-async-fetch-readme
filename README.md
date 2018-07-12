@@ -3,13 +3,13 @@ Fetching Asynchronously with JavaScript
 
 ## The Problem with Data
 
-Web users expect sites to load quickly and to stay updated. Research shows
+When it comes to making engaging web sites, we often find ourselves needing to
+send a lot of data (text, images, media, etc.). But sending and loading this
+data on page visit *feels* slow, especially on a slow connection.
+
+But web users expect sites to load quickly and to stay updated. Research shows
 that 40 percent of visitors to a website will leave if the site takes more than
 3 seconds to load. Mobile users are even less patient.
-
-When it comes to making engaging web sites, we often find ourselves needing to
-send a lot of data. But sending and loading this data on page visit *feels* slow,
-especially on a slow connection.
 
 JavaScript provides a solution by allowing us to serve up data content
 _separately_ from the initial page load of a site. The result is that a user
