@@ -4,7 +4,7 @@ Fetching Asynchronously with JavaScript
 ## The Problem with Data
 
 Users of the web expect a high level of responsiveness and a
-_seamless_ experience when visiting a website.
+_seamless_ experience.
 
 
 
