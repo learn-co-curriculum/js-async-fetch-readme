@@ -16,9 +16,8 @@ deliver an initial, engaging page using HTML and CSS. As the user is beginning
 to read the site, we use JavaScript to add more to the DOM. This technique is
 known as ***AJAX***.
 
-In this lesson, we will be discussing how
-JavaScript retrieves data along with how to use the built-in `fetch()` function to
-handle remote data retrieval.
+In this lesson, we will use the JavaScript `fetch()` function to experience the
+AJAX technique.
 
 ## Objectives
 
