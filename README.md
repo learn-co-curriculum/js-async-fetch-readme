@@ -3,11 +3,9 @@ Fetching Asynchronously with JavaScript
 
 ## The Problem with Data
 
-Almost all users of the modern web expect a high level of responsiveness and a
-_seamless_ experience when visiting a website. There is research that shows that
-40 percent of visitors to a website will leave if the site takes more than 3
-seconds to load. This number becomes higher when mobile visitors are taken into
-account.
+Web users expect sites to load quickly and to stay updated. Research shows
+that 40 percent of visitors to a website will leave if the site takes more than
+3 seconds to load. Mobile users are even less patient.
 
 As web developers, making sure the websites we build are fast and responsive to
 users is critical. But when it comes to loading content, we often find ourselves
