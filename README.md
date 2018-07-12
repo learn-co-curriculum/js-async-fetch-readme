@@ -16,14 +16,6 @@ deliver an initial, engaging page using HTML and CSS. As the user is beginning
 to read the site, we use JavaScript to add more to the DOM. This technique is
 known as ***AJAX***.
 
-This opens up a lot of possibilities!
-
-* It allows us to pull in dynamic content. The same HTML page could be used for
-every recipe on a cooking website, only the text content changes.
-* It allows us to get data from multiple sources. We could make a website that
-displays the current weather forecast and the current price of bitcoin side by
-side!
-
 In this lesson, we will be discussing how
 JavaScript retrieves data along with how to use the built-in `fetch()` function to
 handle remote data retrieval.
@@ -34,6 +26,7 @@ handle remote data retrieval.
 2. Explain how `fetch()` is used in modern browsers
 3. Explain what are sending `fetch()` requests 
 4. Working around backwards compatibility issues
+5. Identify examples of the AJAX technique on popular web sites
 
 ## Explain How JavaScript Fetches Data From Remote Resources
 
@@ -190,6 +183,19 @@ Keep in mind that, while it is increasing, [browser
 support](http://caniuse.com/#feat=fetch) for `fetch()` is still limited to roughly
 90% of users. For the remaining 10%, we still need to consider the use of XHR or
 jQuery's `$.ajax` as fallback options.
+
+## Identify Examples Of The AJAX Technique On Popular Web Sites
+
+The AJAX technique opens up a lot of possibilities!
+
+* It allows us to pull in dynamic content. The same "framing" HTML page could
+  be used for every recipe on a cooking website, only the text content changes.
+  This approach was pioneered by GMail whose navigational area is swapped for
+  mail content swiftly thanks to AJAX.
+* It allows us to get data from multiple sources. We could make a website that
+  displays the current weather forecast and the current price of bitcoin side
+  by side! This approach is used by most sites to render ads. Your content
+  loads while JavaScript gets the ad to show and injects it into your page.
 
 ## Conclusion
 
