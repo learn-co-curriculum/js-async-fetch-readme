@@ -1,7 +1,7 @@
 Fetching Asynchronously with JavaScript
 ---
 
-## The Problem with Data
+## Problem Statement
 
 When it comes to making engaging web sites, we often find ourselves needing to
 send a lot of data (text, images, media, etc.). But sending and loading this
