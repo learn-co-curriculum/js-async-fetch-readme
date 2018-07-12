@@ -85,7 +85,8 @@ fetch('http://api.open-notify.org/astros.json').then(response => response.json()
 
 ![Simple fetch()](https://curriculum-content.s3.amazonaws.com/skills-front-end-web-development/js-async-fetch-readme/simple_fetch_incog_window.png)
 
-You might notice that this chained method call returned a `Promise`. We'll
+You might notice that this chained method call returned a `Promise` in the
+DevTools console. We'll
 cover that later.
 
 ## Working Around Backwards Compatibility Issues
