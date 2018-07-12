@@ -86,15 +86,13 @@ fetch('http://api.open-notify.org/astros.json').then(response => response.json()
 ![Simple fetch()](https://curriculum-content.s3.amazonaws.com/skills-front-end-web-development/js-async-fetch-readme/simple_fetch_incog_window.png)
 
 You might notice that this chained method call returned a `Promise` in the
-DevTools console. We'll
-cover that later.
+DevTools console. We'll cover that later.
 
 ## Working Around Backwards Compatibility Issues
 
-As you can see, `fetch()` provides us with a clean, low-maintenance way to get
-and work with resources. However, `fetch()` has only recently arrived in
-browsers. While it's _generally_ safe enough to lean on, other in historical
-code,  you might see `jquery.ajax` or `$.ajax` or an object called an
+As you can see, `fetch()` provides us with a short way to fetch and work with
+resources. However, `fetch()` has only recently arrived in browsers. In older
+code you might see `jquery.ajax` or `$.ajax` or an object called an
 `XMLHttpRequestObject`.
 
 ## Identify Examples Of The AJAX Technique On Popular Web Sites
