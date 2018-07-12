@@ -7,11 +7,9 @@ Web users expect sites to load quickly and to stay updated. Research shows
 that 40 percent of visitors to a website will leave if the site takes more than
 3 seconds to load. Mobile users are even less patient.
 
-But when it comes to making engaging web sites, we often find ourselves
-needing a lot of data.
-
-Loading a lot of data at once can also take a noticeable amount time,
-especially on a slow connection.
+When it comes to making engaging web sites, we often find ourselves needing
+to send a lot of data.  Loading a lot of data at once can also take a noticeable amount
+time, especially on a slow connection.
 
 JavaScript provides a solution by allowing us to serve up data content
 _separately_ from the initial page load of a site. The result is that a user
