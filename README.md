@@ -18,8 +18,6 @@ known as ***AJAX***.
 
 This opens up a lot of possibilities!
 
-* It saves on bandwidth. We're not loading the entire page over any over, only
-what we need
 * It allows us to pull in dynamic content. The same HTML page could be used for
 every recipe on a cooking website, only the text content changes.
 * It allows us to get data from multiple sources. We could make a website that
