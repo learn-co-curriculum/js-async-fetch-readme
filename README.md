@@ -76,6 +76,18 @@ fetch('http://api.open-notify.org/astros.json')
 
 ![kimmy wow](http://i.giphy.com/3osxYwZm9WZwnt1Zja.gif)
 
+Let's perform a trivial demonstration. Open up a new **incognito** tab in
+Chrome. Open up DevTools and paste the following:
+
+```js
+fetch('http://api.open-notify.org/astros.json').then(response => response.json()).then(json => document.write(`Holy cow! There are ${json["number"]} humans in space.`));
+```
+
+![Simple fetch()]()
+
+You might notice that this chained method call returned a `Promise`. We'll
+cover that later.
+
 ## Working Around Backwards Compatibility Issues
 
 As you can see, `fetch()` provides us with a clean, low-maintenance way to get
