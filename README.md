@@ -1,37 +1,24 @@
 Fetching Asynchronously with JavaScript
 ---
 
-## The Problem with Data
+## Problem Statement
 
-Web users expect sites to load quickly and to stay updated. Research shows
-that 40 percent of visitors to a website will leave if the site takes more than
-3 seconds to load. Mobile users are even less patient.
+When it comes to making engaging web sites, we often find ourselves needing to
+send a lot of data (text, images, media, etc.). But sending and loading this
+data on page visit *feels* slow, especially on a slow connection.
 
-But when it comes to making engaging web sites, we often find ourselves
-needing a lot of data.
+However, web users expect sites to load quickly and to stay updated. Research
+shows that 40 percent of visitors to a website will leave if the site takes
+more than 3 seconds to load. Mobile users are even less patient.
 
-Loading a lot of data at once can also take a noticeable amount time,
-especially on a slow connection.
+We deliver sites that don't bore users by using a technique called ***AJAX***.
+In AJAX we:
 
-JavaScript provides a solution by allowing us to serve up data content
-_separately_ from the initial page load of a site. The result is that a user
-visiting a website will see _something_ load quickly, the initial DOM. When the
-rest of the data is ready, JavaScript can be used to add it to the DOM.
+1. Deliver an initial, engaging page using HTML and CSS
+2. Use JavaScript to add more to the DOM, behind the scenes
 
-This opens up a lot of possibilities!
-
-* It saves on bandwidth. We're not loading the entire page over any over, only
-what we need
-* It allows us to pull in dynamic content. The same HTML page could be used for
-every recipe on a cooking website, only the text content changes.
-* It allows us to get data from multiple sources. We could make a website that
-displays the current weather forecast and the current price of bitcoin side by
-side!
-
-Overall, allowing JavaScript to request, receive, and render data results in a
-much better user experience. In this lesson, we will be discussing how
-JavaScript retrieves data along with how to use the built-in `fetch()` function to
-handle remote data retrieval.
+In this lesson, we will use the JavaScript `fetch()` function and experience
+the AJAX technique.
 
 ## Objectives
 
@@ -39,6 +26,7 @@ handle remote data retrieval.
 2. Explain how `fetch()` is used in modern browsers
 3. Explain what are sending `fetch()` requests 
 4. Working around backwards compatibility issues
+5. Identify examples of the AJAX technique on popular web sites
 
 ## Explain How JavaScript Fetches Data From Remote Resources
 
@@ -195,6 +183,19 @@ Keep in mind that, while it is increasing, [browser
 support](http://caniuse.com/#feat=fetch) for `fetch()` is still limited to roughly
 90% of users. For the remaining 10%, we still need to consider the use of XHR or
 jQuery's `$.ajax` as fallback options.
+
+## Identify Examples Of The AJAX Technique On Popular Web Sites
+
+The AJAX technique opens up a lot of possibilities!
+
+* It allows us to pull in dynamic content. The same "framing" HTML page could
+  be used for every recipe on a cooking website, only the text content changes.
+  This approach was pioneered by GMail whose navigational area is swapped for
+  mail content swiftly thanks to AJAX.
+* It allows us to get data from multiple sources. We could make a website that
+  displays the current weather forecast and the current price of bitcoin side
+  by side! This approach is used by most sites to render ads. Your content
+  loads while JavaScript gets the ad to show and injects it into your page.
 
 ## Conclusion
 
