@@ -26,8 +26,7 @@ every recipe on a cooking website, only the text content changes.
 displays the current weather forecast and the current price of bitcoin side by
 side!
 
-Overall, allowing JavaScript to request, receive, and render data results in a
-much better user experience. In this lesson, we will be discussing how
+In this lesson, we will be discussing how
 JavaScript retrieves data along with how to use the built-in `fetch()` function to
 handle remote data retrieval.
 
