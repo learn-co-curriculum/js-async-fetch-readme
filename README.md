@@ -7,8 +7,7 @@ Web users expect sites to load quickly and to stay updated. Research shows
 that 40 percent of visitors to a website will leave if the site takes more than
 3 seconds to load. Mobile users are even less patient.
 
-As web developers, making sure the websites we build are fast and responsive to
-users is critical. But when it comes to loading content, we often find ourselves
+But when it comes to making engaging web sites, we often find ourselves
 needing a lot of data.
 
 Data takes memory to store, and bandwidth to download from a server. But just as
