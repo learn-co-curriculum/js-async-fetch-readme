@@ -5,8 +5,7 @@ Fetching Asynchronously with JavaScript
 
 Web users expect sites to load quickly and to stay updated. Research shows
 that 40 percent of visitors to a website will leave if the site takes more than
-3 seconds to load. This number becomes higher when mobile visitors are taken
-into account.
+3 seconds to load. Mobile users are even less patient.
 
 As web developers, making sure the websites we build are fast and responsive to
 users is critical. But when it comes to loading content, we often find ourselves
