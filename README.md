@@ -77,13 +77,11 @@ fetch('http://api.open-notify.org/astros.json')
 
 ## Working Around Backwards Compatibility Issues
 
-As you can see, `fetch()` provides us with a clean, low-maintenance way to
-get and work with resources.
-
-Keep in mind that, while it is increasing, [browser
-support](http://caniuse.com/#feat=fetch) for `fetch()` is still limited to roughly
-90% of users. For the remaining 10%, we still need to consider the use of XHR or
-jQuery's `$.ajax` as fallback options.
+As you can see, `fetch()` provides us with a clean, low-maintenance way to get
+and work with resources. However, `fetch()` has only recently arrived in
+browsers. While it's _generally_ safe enough to lean on, other in historical
+code,  you might see `jquery.ajax` or `$.ajax` or an object called an
+`XMLHttpRequestObject`.
 
 ## Identify Examples Of The AJAX Technique On Popular Web Sites
 
