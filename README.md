@@ -53,7 +53,7 @@ to get data using XHR, but it does take quite a bit of setup.
 
 Let's say we wanted to retrieve a list of all the people currently in space. The
 list is freely available as an API here:
-[http://api.open-notify.org/astros.json][http://api.open-notify.org/astros.json]
+[http://api.open-notify.org/astros.json](http://api.open-notify.org/astros.json)
 
 Using the old ways of XHR, getting that data would look something like this:
 
