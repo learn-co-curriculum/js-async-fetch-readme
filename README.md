@@ -85,16 +85,16 @@ code,  you might see `jquery.ajax` or `$.ajax` or an object called an
 
 ## Identify Examples Of The AJAX Technique On Popular Web Sites
 
-The AJAX technique opens up a lot of possibilities!
+The AJAX technique opens up a lot of uses!
 
-* It allows us to pull in dynamic content. The same "framing" HTML page could
-  be used for every recipe on a cooking website, only the text content changes.
-  This approach was pioneered by GMail whose navigational area is swapped for
-  mail content swiftly thanks to AJAX.
+* It allows us to pull in dynamic content. The same "framing" HTML page remains
+  on screen for a cooking website. The recipe on display updates without page
+  load.  This approach was pioneered by GMail whose navigational area is swapped
+  for mail content swiftly thanks to AJAX.
 * It allows us to get data from multiple sources. We could make a website that
   displays the current weather forecast and the current price of bitcoin side
-  by side! This approach is used by most sites to render ads. Your content
-  loads while JavaScript gets the ad to show and injects it into your page.
+  by side! This approach is used by most sites to render ads. Your content loads
+  while JavaScript gets the ad to show and injects it into your page.
 
 ## Conclusion
 
@@ -106,9 +106,8 @@ we need to in our code. We can `fetch()` data on the click of a button or the
 expansion of a tab, instead of when the page initially loads.
 
 By doing this, we can send _only_ the data that is needed, saving on server
-bandwidth while minimizing loading times for the end user. Learning how to use
-`fetch()` also opens up the world of data for us to access and incorporate in our
-own projects. 
+bandwidth while minimizing loading times for the end user. The `fetch()` method
+opens the world of third party data which we can use in our own projects.
 
 ## Resources
 
