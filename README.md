@@ -11,10 +11,10 @@ But web users expect sites to load quickly and to stay updated. Research shows
 that 40 percent of visitors to a website will leave if the site takes more than
 3 seconds to load. Mobile users are even less patient.
 
-JavaScript provides a solution by allowing us to serve up data content
-_separately_ from the initial page load of a site. The result is that a user
-visiting a website will see _something_ load quickly, the initial DOM. When the
-rest of the data is ready, JavaScript can be used to add it to the DOM.
+A way to deliver a lot of data in a way that doesn't irritate users is to
+deliver an initial, engaging page using HTML and CSS. As the user is beginning
+to read the site, we use JavaScript to add more to the DOM. This technique is
+known as ***AJAX***.
 
 This opens up a lot of possibilities!
 
