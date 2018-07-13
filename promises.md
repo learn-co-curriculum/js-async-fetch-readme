@@ -1,53 +1,160 @@
-- [HTML5 Rocks Promises](http://www.html5rocks.com/en/tutorials/es6/promises/)
-#### Promises and `then`
+# Coding for Asynchrony with `Promise`s
 
-When you promise your roommate that you're going to take out the trash, you
-haven't done it yet, but it's something that you're going to do in the future
-(usually). In JavaScript, promises work in a very similar way.  A `Promise`
-object represents a value that may not be available yet, but will be resolved at
-some point in the future. This allows us to write more flexible code. JavaScript
-code typically is fired off line by line, one line immediately after the other.
-By using `Promise` objects, we can escape this and have some code fire _only
-when it ready_. The `fetch()` function returns a `Promise`. We can say, in code,
-"ok, json, once you've got all the astronaut data, log it". Code immediately
-after a `Promise` fires _before_ the `Promise` is resolved. This is the essence
-of asynchronous JavaScript. 
+## Problem Statement
 
-`Promise` objects implement a `then` function that is called when the `Promise`
-is *fulfilled*, or completed successfully. In the case of `fetch()`, a request is
-sent to an API, 'http://api.open-notify.org/astros.json', and upon receiving a
-response, the `Promise` is fulfilled (even if the response is an error).
-Whatever is returned in the `Promise` is passed to the first `then` function.
+In an asynchronous execution model, like JavaScript has in the browser,
+handling asynchronous work, responding to success, and responding to failure
+could create a lot of twisty, hard-to-read code.
 
-Upon successful completion of our promise, whatever function we write inside of
-`then()` will be called with the `Promise` response as the function's
-_argument_.
-
-One interesting thing about this `fetch()` code is that it highlights a powerful
-feature of a `thenable` object — we can chain each `then` call, and the next one
-receives the result of the previous one as its argument.
-
-So, in this code:
+Imagine:
 
 ```js
-fetch('http://api.open-notify.org/astros.json')
-  .then(response => response.json())
-  .then(json => console.log(json));
+//set up the request
+let xhr = new XMLHttpRequest();
+xhr.open('GET', 'http://api.open-notify.org/astros.json');
+xhr.responseType = 'json';
+
+//provide a function to call if the request is successful
+xhr.addEventListener("load", () => console.log(xhr.response))
+
+//provide a function to call if the request is successful
+xhr.addEventListener("error", () => {
+  console.error(xhr.response);
+  // Do cleanup code...
+})
+
+//send the request
+xhr.send();
 ```
 
-...the line `then(response => response.json())` is getting the response
-`response` from `fetch()` and using the `json` method to convert it into JSON.
-That returned JSON is passed into the second `then`, `then(json =>
-console.log(json))`, which logs the JSON data.
+Yet this **is valid JavaScript**. This is the way all data request looked
+before ES2015!
 
-#### Body Mixin
+With `fetch()` this code became much less complicated because a thing called
+`Promise`s let us express uncertainty in a much simpler way. This lesson will
+show us how `fetch()` uses `Promise`s allow for cleaner code.
 
-The `fetch()` API includes a *mixin*, or additional code, called
-[Body](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#Body),
-which has functions that specialize in transforming the `body` of a request or
-response, including `.json()`.
+## Objectives
 
-So calling `res.json()` in our `fetch()` is just a nice shorthand for saying "give
-me the `body` of the response parsed as JSON".
+1. Demonstrate capturing the Promise returned by `fetch()`
+2. The Hidden `Promise`s of `fetch()`
+3. Handling failure, or `rejected` `Promise`s
+
+## Demonstrate Capturing The Promise Returned By `fetch()`
+
+Use a DevTools console to see the following:
+
+```js
+let fetchPromise = fetch("http://api.open-notify.org/astros.json")
+fp.constructor // => ƒ Promise() { [native code] }
+fp.then // => ƒ then() { [native code] }
+```
+
+The `constructor` property tells us that `fp` is a `Promise` and that it has a
+method called `then` on it. We can see that this agrees with the `Promise`
+[documentation][promdoc] at MDN.
+
+When a `Promise` is _fulfilled_, i.e. it does the thing OK, then function
+inside ("the inner function") the `then()` is called. The return value of
+_that_ function is wrapped in a _new_ Promise so that, if so desired,
+_another_ `then()` can be attached to it.
+
+If a `Promise` is _rejected_, i.e. the thing did not happen, then the function
+inside the nearest `catch()`, and all subsequent `catches()` are executed
+instead.
+
+Let's see how this works with our `fetch()` skeleton assuming that all of the
+`Promise`s _resolve_ i.e. are successful.
+
+## The Hidden `Promise`s of `fetch()`
+
+But _why_ wrap code in `Promise`s, well it's because some asynchronous
+operations are risky not because of your code, but because we live in an
+uncertain world.
+
+```js
+fetch("URL") // Point 1
+  .then(resp => resp.json()) // Point 2
+  .then(json => ...) // Point 3
+```
+
+At Point 1, we're making a standard synchronous call. Nothing new. But that
+call returns a Promise (Point 2). Why does it do that? Well, what if the
+network goes out midway? You can't say "Hey response, give me your JSON" if a
+response never came back. Or what if someone deployed bad code to the server?
+If the server says "Go away" (more formally, returns an error status starting
+with 5), you're not going to get a `.json()`-able response.
+
+It's possible at Point 2 that the response might be _rejected_ instead of
+_fulfilled_. Assuming that the `fetch()` at Point 1 is _fulfilled_ the `then()`
+in Point 2 executes and the return value is wrapped in a Promise.
+
+But wait, why does Point 2 return a `Promise`? What could go wrong with asking a
+_fulfilled_ response for its JSON? What if the server returns a garbage string
+that's _not_ JSON? Again, **if** that conversion can be done it is wrapped in a
+`Promise` and is available to the `then()` in Point 3. At Point 3 we know we
+have valid JSON that we can proceed to use.
+
+## Handling failure, or `rejected` `Promise`s
+
+Let's try this code:
+
+```js
+fetch("http://api.open-notify.org/astros.json")
+  .then( resp => console.log("Yay"))
+  .catch( error => console.error(`Oh no! ${error}`));
+```
+
+This should work. But let's make an error in the URL.
+
+```js
+fetch("http://api.open-notify.zrg/astros.json")
+  .then( resp => console.log("Yay"))
+  .catch( error => console.error(`Oh no! ${error}`));
+```
+
+This returns "Oh no! Failed to fetch" Obviously, there's no such thing as
+`api.open-notify.zrg`.
+
+Let's broaden this out a bit:
+
+```js
+fetch("http://api.open-notify.org/astros.json")
+  .then( resp => resp.json())
+  .catch( error => console.error(`Oh no! ${error}`))
+.then( json => console.log(json["number"]))
+.catch( error => console.error(`Ruh-roh! Couldn't convert the json: ${error}`))
+```
+
+This works. Let's break the URL again:
+
+In this case we get two errors:
+
+```text
+Oh no! TypeError: Failed to fetch
+Ruh-roh! Couldn't convert the json: TypeError: Cannot read property 'number' of undefined
+```
+
+This makes sense because the first Promise failed all other failures that were
+contingent on its success _also_ need to be triggered. We humans understand the
+risk associated with building our future on too many what-ifs:
+
+> IF I make it in Hollywood, I will get a big house or else I will move back
+> home, and if I have a big house in that big house I will have a pony, but if
+> not I will not need a stable-hand.
+
+`Promise`s allow you to express to yourself an other developers your awareness
+that success is by no means assured, even when **you** do everything correctly.
+
+## Conclusion
+
+`Promise`s allow JavaScript developers to expressively communicate the risk
+inherent in certain type of work. They are part of the internals of the
+`fetch()` method used to retrieve data when using the AJAX technique.
+
+## Resources
+
+* [HTML 5 Rocks on `Promise`][h5r]
 
 
+[h5r]: http://www.html5rocks.com/en/tutorials/es6/promises/
