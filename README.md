@@ -47,7 +47,8 @@ additional data _after_ information is presented to the user.
 
 ## Explain How To Fetch Data With `fetch()`
 
-The `fetch()` function retrieves data. It's a global function.
+The `fetch()` function retrieves data. It's a global _method_ on the `window`
+object. That means you can simply use it with `fetch()`.
 
 Here's the skeleton for using it:
 
