@@ -5,7 +5,8 @@ Fetching Asynchronously with JavaScript
 
 When it comes to making engaging web sites, we often find ourselves needing to
 send a lot of data (text, images, media, etc.). But sending and loading this
-data on page visit *feels* slow, especially on a slow connection.
+**huge** data payload when your first land on a page **feels** slow,
+especially on a slow connection.
 
 However, web users expect sites to load quickly and to stay updated. Research
 shows that 40 percent of visitors to a website will leave if the site takes
