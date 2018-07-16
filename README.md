@@ -4,16 +4,18 @@ Fetching Asynchronously with JavaScript
 ## Problem Statement
 
 When it comes to making engaging web sites, we often find ourselves needing to
-send a lot of data (text, images, media, etc.). But sending and loading this
-**huge** data payload when your first land on a page **feels** slow,
-especially on a slow connection.
+send a lot of data (text, images, media, etc.). But sending a **huge** amount
+of data when you first land on a page puts a huge burden on the user's
+computer. The user's computer has to build the DOM and integrate all those
+pieces, retrieving and stitching them together. Users perceive this process as
+slowness and too much of it means they'll click away and never come back.
 
-However, web users expect sites to load quickly and to stay updated. Research
-shows that 40 percent of visitors to a website will leave if the site takes
-more than 3 seconds to load. Mobile users are even less patient.
+Web users expect sites to load quickly **and** to stay updated. Research shows
+that 40 percent of visitors to a website will leave if the site takes more than
+3 seconds to load. Mobile users are even _less_ patient.
 
-We deliver sites that don't bore users by using a technique called ***AJAX***.
-In AJAX we:
+We deliver sites that keep users engaged by using a technique called
+***AJAX***.  In AJAX we:
 
 1. Deliver an initial, engaging page using HTML and CSS
 2. Use JavaScript to add more to the DOM, behind the scenes
@@ -22,14 +24,14 @@ AJAX relies on several technologies:
 
 * Things called `Promise`s
 * Things called `XMLHttpRequestObject`s
-* A "serialization format" called JSON
-* "asynchronous Input / Output"
-* "the event loop"
+* A [serialization format][sf] called JSON
+* [asynchronous Input / Output][asyncIO]
+* [the event loop][el]
 
-Understanding each of these first gets you away from _experiencing_ the magic
-of AJAX. We're going to gloss over all these pieces in this lesson. By doing
-so, we can see how the JavaScript `fetch()` function works, and experience the
-AJAX technique.
+
+We're going to gloss over all these pieces in this lesson. By doing so, we can
+_see_ how the JavaScript `fetch()` function works, and experience the AJAX
+technique.
 
 > **STRETCH**: If you were to apply for a software developer position, you
 > would be expected to understand each of the "glossed over" elements. This
@@ -120,13 +122,14 @@ code you might see `jquery.ajax` or `$.ajax` or an object called an
 The AJAX technique opens up a lot of uses!
 
 * It allows us to pull in dynamic content. The same "framing" HTML page remains
-  on screen for a cooking website. The recipe on display updates without page
+  on screen for a cooking website. The recipe on display updates _without_ page
   load.  This approach was pioneered by GMail whose nav area is swapped
   for mail content swiftly &mdash; thanks to AJAX.
 * It allows us to get data from multiple sources. We could make a website that
   displays the current weather forecast and the current price of bitcoin side
   by side! This approach is used by most sites to render ads. Your content loads
-  while JavaScript gets the ad to show and injects it into your page.
+  while JavaScript gets the ad to show and injects it into your page (sometimes
+  AJAX can be used in a way that we don't _entirely_ like).
 
 ## Conclusion
 
@@ -145,3 +148,7 @@ accordion display. There are many older methods for fetching data, but
 - [MDN Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
 
 <p class='util--hide'>View <a href='https://learn.co/lessons/javascript-fetch'>Getting Data from the Web</a> on Learn.co and start learning to code for free.</p>
+
+[sf]: https://en.wikipedia.org/wiki/Serialization
+[asyncIO]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop
+[el]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop
