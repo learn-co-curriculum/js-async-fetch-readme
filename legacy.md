@@ -1,4 +1,4 @@
-# Legacy AJAX with XmlHttpRequest
+# Legacy AJAX with XMLHttpRequest
 
 ## Problem Statement
 
@@ -26,7 +26,7 @@ let xhr = new XMLHttpRequest();
 ```
 
 It might be surprising that the class that makes these JSON requests is called
-an `XmlHttpRequest`. When `XMLHttpRequest` was creatd, XML was a very popular
+an `XMLHttpRequest`. When `XMLHttpRequest` was creatd, XML was a very popular
 serialization format. JSON has, since, become more popular.
 
 Great, so now we have an instances of `XMLHttpRequest`. We need to configure it
