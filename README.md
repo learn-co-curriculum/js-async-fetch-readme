@@ -34,10 +34,9 @@ _see_ how the JavaScript `fetch()` function works, and experience the AJAX
 technique.
 
 > **STRETCH**: If you were to apply for a software developer position, you
-> would be expected to understand each of the "glossed over" elements. This
-> course will provide additional material to introduce you to the key
-> technology. If, on the other hand, you're not seeking that deeper technical
-> understanding, this introduction should be enough.
+> would be expected to understand each of the "glossed over" elements. If
+> you're not seeking that deeper technical understanding, this introduction
+> should be enough.
 
 Let's learn to use `fetch()` to apply the AJAX technique: a way to load
 additional data _after_ information is presented to the user.
